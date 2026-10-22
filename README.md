@@ -13,4 +13,4 @@
 - Actions secret `DOCKERHUB_USERNAME`：Docker Hub 登录用户名。
 - Actions secret `DOCKERHUB_TOKEN`：Docker Hub access token。
 
-向 `main` 推送变更会构建并发布 `latest` 和 `sha-<commit>` 标签；推送 `v*` 格式的 Git tag 会发布对应版本标签。工作流每天 UTC 凌晨 2 点定时构建并发布镜像。Pull request 会构建镜像但不会登录或推送。也可以通过 Actions 页面手动运行工作流。
+每次发布都会附带构建日期标签（UTC，格式为 `YYYYMMDD`，例如 `20261022`）。向 `main` 推送变更还会发布 `latest` 标签；推送 `v*` 格式的 Git tag 会发布对应版本标签。工作流每天 UTC 凌晨 2 点定时构建并发布镜像。Pull request 会构建镜像但不会登录或推送。也可以通过 Actions 页面手动运行工作流。
